@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Bloquea la carpeta de plantillas/desechables si existiera
+Disallow: /assets/js/config.js
+
+Sitemap: https://lobato18.github.io/gta6-take-two/sitemap.xml
