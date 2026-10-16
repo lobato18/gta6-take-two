@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA 6 & Take-Two (TTWO) — Avances y bolsa al 16 de octubre de 2026</title>
+<meta name="description" content="Información actualizada sobre los avances de GTA 6 y por qué fluctúa la acción de Take-Two Interactive (TTWO) a causa de las noticias.">
+<style>
+  :root{
+    --bg:#0b0712;
+    --bg2:#120a1e;
+    --panel:rgba(255,255,255,.045);
+    --panel-brd:rgba(255,255,255,.10);
+    --txt:#ece7f4;
+    --muted:#a89fc0;
+    --pink:#ff2d92;
+    --purple:#a259ff;
+    --cyan:#22e0ff;
+    --green:#38e07b;
+    --red:#ff5c6c;
+    --yellow:#ffd34d;
+    --radius:16px;
+    --shadow:0 18px 50px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Segoe UI",Roboto,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    background:
+      radial-gradient(1100px 600px at 12% -8%, rgba(162,89,255,.28), transparent 60%),
+      radial-gradient(1000px 560px at 92% 2%, rgba(34,224,255,.14), transparent 55%),
+      radial-gradient(900px 700px at 50% 120%, rgba(255,45,146,.16), transparent 60%),
+      linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
+    background-attachment:fixed;
+    color:var(--txt);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(14px);
+    background:rgba(11,7,18,.72);
+    border-bottom:1px solid var(--panel-brd);
+  }
+  nav .wrap{display:flex;align-items:center;gap:18px;height:60px;flex-wrap:wrap}
+  nav .brand{font-weight:800;letter-spacing:.5px;font-size:1rem}
+  nav .brand span{color:var(--pink)}
+  nav .links{display:flex;gap:16px;flex-wrap:wrap;margin-left:auto;font-size:.85rem}
+  nav .links a{color:var(--muted)}
+  nav .links a:hover{color:var(--txt);text-decoration:none}
+
+  /* HERO */
+  header.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+  .kicker{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:.72rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--cyan);
+    border:1px solid rgba(34,224,255,.35);
+    background:rgba(34,224,255,.08);
+    padding:6px 14px;border-radius:999px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  h1{
+    font-size:clamp(2.1rem,5.4vw,3.6rem);
+    line-height:1.06;margin:20px 0 14px;font-weight:900;letter-spacing:-1px;
+    background:linear-gradient(100deg,#fff 10%,var(--pink) 45%,var(--purple) 75%,var(--cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lede{font-size:1.12rem;color:#d6cfe6;max-width:760px}
+  .meta-row{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px;color:var(--muted);font-size:.85rem}
+  .meta-row b{color:var(--txt)}
+
+  /* Countdown */
+  .countdown{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+    margin:34px 0 6px;max-width:640px;
+  }
+  .cd-box{
+    background:var(--panel);border:1px solid var(--panel-brd);border-radius:var(--radius);
+    padding:16px 10px;text-align:center;box-shadow:var(--shadow);
+  }
+  .cd-num{font-size:1.9rem;font-weight:900;color:#fff;line-height:1}
+  .cd-lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin-top:6px}
+  .cd-caption{font-size:.82rem;color:var(--muted);margin-top:6px}
+
+  /* SECTIONS */
+  section{padding:44px 0}
+  .sec-head{margin-bottom:26px}
+  .sec-tag{font-size:.72rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--pink)}
+  h2{font-size:clamp(1.5rem,3.4vw,2.15rem);margin:8px 0 10px;font-weight:850;letter-spacing:-.5px}
+  .sec-head p{color:var(--muted);max-width:780px;margin:0}
+
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.g2,.g3,.g4{grid-template-columns:1fr}.countdown{grid-template-columns:repeat(2,1fr)}}
+
+  .card{
+    background:var(--panel);border:1px solid var(--panel-brd);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--cyan));opacity:.75}
+  .card h3{margin:4px 0 8px;font-size:1.05rem}
+  .card p{margin:0;color:var(--muted);font-size:.92rem}
+  .card .big{font-size:1.9rem;font-weight:900;color:#fff;line-height:1.1}
+  .pill{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+  .pill.ok{background:rgba(56,224,123,.14);color:var(--green);border:1px solid rgba(56,224,123,.3)}
+  .pill.rumor{background:rgba(255,211,77,.14);color:var(--yellow);border:1px solid rgba(255,211,77,.3)}
+  .pill.bad{background:rgba(255,92,108,.14);color:var(--red);border:1px solid rgba(255,92,108,.3)}
+  .pill.info{background:rgba(34,224,255,.12);color:var(--cyan);border:1px solid rgba(34,224,255,.3)}
+
+  /* TIMELINE */
+  .timeline{position:relative;margin-left:6px;padding-left:28px;border-left:2px solid rgba(162,89,255,.4)}
+  .tl-item{position:relative;padding:0 0 26px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{
+    content:"";position:absolute;left:-37px;top:5px;width:14px;height:14px;border-radius:50%;
+    background:var(--bg);border:3px solid var(--pink);box-shadow:0 0 12px rgba(255,45,146,.8)
+  }
+  .tl-date{font-size:.76rem;font-weight:700;letter-spacing:.6px;color:var(--cyan);text-transform:uppercase}
+  .tl-item h4{margin:3px 0 6px;font-size:1.02rem}
+  .tl-item p{margin:0;color:var(--muted);font-size:.9rem}
+
+  /* CHART */
+  .chart-card{background:var(--panel);border:1px solid var(--panel-brd);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .chart-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .price-now{font-size:2.5rem;font-weight:900;line-height:1}
+  .price-chg{font-size:1rem;font-weight:700}
+  .up{color:var(--green)} .down{color:var(--red)}
+  #chartWrap{position:relative;margin-top:6px}
+  #chartWrap svg{width:100%;height:auto;display:block;overflow:visible}
+  .ctip{
+    position:absolute;pointer-events:none;opacity:0;transition:opacity .12s;
+    background:rgba(15,9,26,.96);border:1px solid rgba(162,89,255,.5);border-radius:10px;
+    padding:8px 12px;font-size:.8rem;white-space:nowrap;transform:translate(-50%,-125%);
+    box-shadow:0 10px 30px rgba(0,0,0,.6);z-index:5;
+  }
+  .ctip b{color:#fff}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-size:.78rem;color:var(--muted)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+  .events{margin-top:20px}
+  .event{
+    display:grid;grid-template-columns:96px 1fr;gap:14px;
+    padding:12px 0;border-top:1px solid var(--panel-brd);align-items:start;
+  }
+  .event:first-child{border-top:none}
+  .event .d{font-size:.78rem;font-weight:700;color:var(--muted);padding-top:2px}
+  .event .t strong{color:#fff}
+  .event .t{font-size:.9rem;color:var(--muted)}
+  .tag{display:inline-block;font-size:.64rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-right:8px;vertical-align:1px}
+  .tag.pos{background:rgba(56,224,123,.16);color:var(--green)}
+  .tag.neg{background:rgba(255,92,108,.16);color:var(--red)}
+  .tag.neu{background:rgba(255,255,255,.1);color:var(--muted)}
+
+  /* TABLE */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--panel-brd);border-radius:var(--radius);background:var(--panel)}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
+  th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--panel-brd)}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:1.1px;color:var(--muted);font-weight:700;background:rgba(255,255,255,.02)}
+  tr:last-child td{border-bottom:none}
+  td b{color:#fff}
+
+  /* SUMMARY CARDS */
+  .reason{display:flex;gap:14px;align-items:flex-start}
+  .reason .ic{flex:0 0 42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem}
+  .ic.red{background:rgba(255,92,108,.14);border:1px solid rgba(255,92,108,.3)}
+  .ic.green{background:rgba(56,224,123,.14);border:1px solid rgba(56,224,123,.3)}
+  .reason h3{margin:0 0 4px;font-size:1rem}
+  .reason p{margin:0;color:var(--muted);font-size:.88rem}
+
+  /* SOURCES */
+  .src-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  @media(max-width:700px){.src-grid{grid-template-columns:1fr}}
+  .src{
+    display:block;padding:13px 16px;border:1px solid var(--panel-brd);border-radius:12px;
+    background:rgba(255,255,255,.03);font-size:.85rem;color:var(--muted)
+  }
+  .src b{color:#fff;display:block;font-size:.86rem;margin-bottom:2px}
+  .src:hover{border-color:rgba(34,224,255,.5);text-decoration:none}
+
+  .note{
+    background:rgba(255,211,77,.07);border:1px solid rgba(255,211,77,.28);border-radius:var(--radius);
+    padding:16px 18px;font-size:.85rem;color:#e8dfc7;margin-top:22px
+  }
+  .note b{color:var(--yellow)}
+
+  footer{border-top:1px solid var(--panel-brd);margin-top:40px;padding:30px 0 50px;color:var(--muted);font-size:.82rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">GTA&nbsp;VI <span>×</span> TTWO</div>
+    <div class="links">
+      <a href="#juego">Avances del juego</a>
+      <a href="#accion">La acción</a>
+      <a href="#porque">¿Por qué fluctúa?</a>
+      <a href="#datos">Datos clave</a>
+      <a href="#fuentes">Fuentes</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker"><span class="dot"></span> Informe actualizado · 16 de octubre de 2026</span>
+    <h1>GTA 6 está a un mes de salir, y Take-Two vive una montaña rusa en bolsa</h1>
+    <p class="lede">
+      El lanzamiento más esperado de la década se estrena el <b>19 de noviembre de 2026</b> en PS5 y Xbox Series X|S.
+      Mientras Rockstar acelera el marketing y estrena tráiler de lanzamiento, la acción de su matriz
+      <b>Take-Two Interactive (NASDAQ: TTWO)</b> se mueve con fuerza al ritmo de cada noticia: rumores de PC,
+      filtraciones, recortes de analistas y presentación de resultados.
+    </p>
+
+    <div class="countdown" id="countdown" aria-label="Cuenta atrás para el lanzamiento">
+      <div class="cd-box"><div class="cd-num" id="cd-d">—</div><div class="cd-lbl">Días</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-h">—</div><div class="cd-lbl">Horas</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-m">—</div><div class="cd-lbl">Minutos</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-s">—</div><div class="cd-lbl">Segundos</div></div>
+    </div>
+    <div class="cd-caption" id="cd-caption">Cuenta atrás para el lanzamiento · 19 de noviembre de 2026</div>
+
+    <div class="meta-row">
+      <span>Último cierre TTWO · <b id="meta-close">$209.38</b> (15 oct)</span>
+      <span>Sesión en curso 16 oct · <b id="meta-intra">≈ $204.12 (−2.5%)</b></span>
+      <span>Rango 52 semanas · <b>$187.63 – $265.94</b></span>
+      <span>Cap. bursátil · <b>≈ $39.9 mil M</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= AVANCES DEL JUEGO ================= -->
+<section id="juego">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Estado del proyecto</div>
+      <h2>Avances confirmados de GTA 6</h2>
+      <p>Resumen de lo más relevante de las últimas semanas, separando lo <b>confirmado</b> por Rockstar/Take-Two de lo que son <b>rumores o filtraciones</b> (sin verificación oficial).</p>
+    </div>
+
+    <div class="grid g3">
+      <div class="card">
+        <span class="pill ok">Confirmado</span>
+        <div class="big">19 nov 2026</div>
+        <h3>Fecha de lanzamiento</h3>
+        <p>PS5 y Xbox Series X|S. Take-Two ha reafirmado la fecha en sus informes trimestrales. Precarga desde el <b>12 de noviembre</b> a medianoche (hora local).</p>
+      </div>
+      <div class="card">
+        <span class="pill info">15 oct 2026</span>
+        <div class="big">Tráiler final</div>
+        <h3>Tráiler de lanzamiento</h3>
+        <p>90 segundos, grabado por completo dentro del juego en una PS5. Presenta el tema inédito <i>«Flower in a Hurricane»</i> de Justice con Tame Impala, SZA y King Gizzard. Superó 1 M de vistas en YouTube en ~30 minutos.</p>
+      </div>
+      <div class="card">
+        <span class="pill info">8 oct 2026</span>
+        <div class="big">6 emisoras</div>
+        <h3>Radios reveladas</h3>
+        <p>Rockstar presentó en su web seis estaciones: Cocoteo, Back Country, Afro Bank FM, The Chamber, Flash FM y Dirty South Classics. El apartado musical es el más ambicioso de la saga.</p>
+      </div>
+      <div class="card">
+        <span class="pill info">14 oct 2026</span>
+        <div class="big">Bloomberg</div>
+        <h3>Reportaje interno</h3>
+        <p>Jason Schreier desglosa los problemas de desarrollo: el ambicioso <b>«Project Americas»</b> (multi-protagonista y varios continentes) obligó a recortar alcance y retrasó años el juego. Jennifer Kolbe afirmó que el coste <b>no superó 1.500 M$</b>.</p>
+      </div>
+      <div class="card">
+        <span class="pill rumor">Rumor · sin confirmar</span>
+        <div class="big">Q1 2027</div>
+        <h3>Versión para PC</h3>
+        <p>GamesBeat reportó (13 oct) que el port de PC llegaría en los primeros tres meses de 2027, citando cuatro fuentes anónimas. Rockstar <b>no</b> lo ha confirmado: oficialmente solo hay PS5 y Xbox.</p>
+      </div>
+      <div class="card">
+        <span class="pill bad">Filtraciones</span>
+        <div class="big">Fin de ruta</div>
+        <h3>«Cyberleek» cesa sus leaks</h3>
+        <p>El filtrador anunció el fin de su campaña (<i>«The End of the Road»</i>), tras no alcanzar los 30 M$ de capitalización de su criptomoneda. No publicó la build de +200 GB prometida. Rockstar lamentó las filtraciones.</p>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:44px">
+      <div class="sec-tag">Cronología</div>
+      <h2>Línea de tiempo reciente</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">27–28 de agosto de 2026</div>
+        <h4><i>An Extended Look</i> en Netflix</h4>
+        <p>El avance más largo hasta la fecha. Netflix y Twitch se saturaron por la demanda (tráfico en Netflix +125%). La acción de Take-Two subió ~2% y Sony ~4% en la apertura.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2 de octubre de 2026</div>
+        <h4>Ficha PEGI 18 publicada y retirada</h4>
+        <p>El sistema europeo de clasificación dejó ver una ficha con violencia intensa, drogas y desnudos; fue retirada después. Es la señal más clara del tono adulto del juego.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">6–7 de octubre de 2026</div>
+        <h4>Xbox desmiente la exclusiva en la nube</h4>
+        <p>Matthew Ball (Xbox) negó el reporte de que GTA 6 se transmitiría en exclusiva por la nube o llegaría a PC por streaming. El juego sigue solo en consola.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">11–18 de octubre de 2026</div>
+        <h4>Campaña de marketing en Miami</h4>
+        <p>Anuncio en el Hard Rock Stadium (partido de los Dolphins), cartel de «Welcome to Vice City» de 975.000 $ en el techo del Kaseya Center y el partido temático de los Miami Heat <b>«A Night in Vice City» el 18 de noviembre</b>.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">9 de noviembre de 2026</div>
+        <h4>Resultados de Take-Two (Q2 FY27)</h4>
+        <p>Informe tras el cierre de la bolsa de EE. UU. y conferencia a las 16:30 ET. Es la <b>última llamada de resultados antes del estreno</b> y donde se dará la guía para el trimestre de diciembre. Diez días antes del lanzamiento.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">19 de noviembre de 2026</div>
+        <h4>Lanzamiento de GTA 6</h4>
+        <p>Sale el juego, el álbum <i>«Grand Theft Auto VI: The Album»</i> y la caja de colección. El estreno cae en el tercer trimestre fiscal de Take-Two.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LA ACCIÓN ================= -->
+<section id="accion">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Mercado</div>
+      <h2>Así está fluctuando la acción de Take-Two (TTWO)</h2>
+      <p>Precios de cierre de las últimas sesiones. La acción ha sido muy volátil: <b>tocó máximos de 243–265 $ en verano</b> y luego cayó más de un 20% en lo que va de año, con picos diarios de ±4–6% ligados a noticias de GTA 6.</p>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-top">
+        <div>
+          <div class="price-now">$209.38 <span class="price-chg up">+4.05%</span></div>
+          <div style="color:var(--muted);font-size:.82rem;margin-top:6px">Cierre del 15 de octubre de 2026 · Sesión del 16 de octubre: <span class="down">≈ $204.12 (−2.5%)</span></div>
+        </div>
+        <div style="text-align:right;font-size:.82rem;color:var(--muted)">
+          Rango 52 sem · <b style="color:#fff">$187.63 – $265.94</b><br>
+          YTD · <b class="down">≈ −22%</b> &nbsp;|&nbsp; Desde máx. jul · <b class="down">−17.8%</b>
+        </div>
+      </div>
+
+      <div id="chartWrap">
+        <div class="ctip" id="ctip"></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--pink)"></i>Cierre diario</span>
+        <span><i style="background:var(--green)"></i>Sesión alcista</span>
+        <span><i style="background:var(--red)"></i>Sesión bajista</span>
+        <span><i style="background:var(--cyan);border-radius:50%"></i>Hito / noticia marcada</span>
+      </div>
+
+      <div class="events" id="events"></div>
+    </div>
+
+    <div class="note">
+      <b>Nota de contexto:</b> los precios de corto plazo son sensibles e intradía. La sesión del 16 de octubre aparece como
+      «en curso» (dato intradía, sujeto a cambio al cierre). Este análisis es informativo y <b>no constituye asesoramiento financiero</b>.
+    </div>
+  </div>
+</section>
+
+<!-- ================= POR QUÉ FLUCTÚA ================= -->
+<section id="porque">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Explicación</div>
+      <h2>¿Por qué fluctúa la acción a causa de las noticias?</h2>
+      <p>TTWO es un valor «de historia»: toda su valuación depende de que GTA 6 cumpla. Eso lo vuelve extremadamente sensible a titulares, rumores y notas de analistas. Estos son los motores del movimiento reciente.</p>
+    </div>
+
+    <div class="grid g2">
+      <div class="card">
+        <div class="reason">
+          <div class="ic green">🚀</div>
+          <div>
+            <h3>El tráiler de lanzamiento (15 oct) → +4%</h3>
+            <p>Reacciones muy positivas, sobre todo por los gráficos. Refuerza la confianza en que el juego cumplirá las expectativas y aleja el riesgo de un nuevo retraso.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="reason">
+          <div class="ic green">🏦</div>
+          <div>
+            <h3>Lluvia de notas de analistas → impulso</h3>
+            <p>Bank of America mantuvo <b>Compra con objetivo de 368 $</b> (el más alto), apostando por la monetización a largo plazo de GTA VI Online. StoneX y Raymond James reiteraron 300 $; Raymond James dijo que las filtraciones y el ruido de PC son <b>riesgo comercial limitado</b>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="reason">
+          <div class="ic green">💿</div>
+          <div>
+            <h3>Pista de un nuevo gran título (Citi)</h3>
+            <p>Tras conocerse que GTA 6 costó <b>≤1.500 M$</b> y que Take-Two tiene ~2.400 M$ en software capitalizado, Citi sugirió que hay ~900 M$ «no-GTA» y que podría venir <b>otro gran juego en 2027–2028</b> (¿un nuevo Red Dead?). Eso responde al miedo a que el negocio se apague tras GTA 6.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="reason">
+          <div class="ic red">📉</div>
+          <div>
+            <h3>Wells Fargo recorta previsiones (12–13 oct) → −4/5%</h3>
+            <p>Mantuvo «Overweight» y objetivo 300 $, pero bajó sus estimaciones de <b>NBA 2K</b> a una caída del 10% interanual y redujo el gasto recurrente de 4% a 1%. Advirtió que la guía del trimestre de diciembre podría quedar <b>por debajo del consenso</b>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="reason">
+          <div class="ic red">🖥️</div>
+          <div>
+            <h3>Rumor del port de PC (13 oct) → presión</h3>
+            <p>La noticia de una versión de PC «Q1 2027» se leyó como señal de que la ventana de ventas en consola podría diluirse, y coincidió con un volumen inusualmente alto (5,2 M de acciones) y opciones cargadas a la baja (puts).</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="reason">
+          <div class="ic red">🔓</div>
+          <div>
+            <h3>Filtraciones y debate «sin disco»</h3>
+            <p>Las amenazas del grupo «Cyberleek» de filtrar la build completa y la controversia por la <b>edición solo digital</b> (sin disco) generaron dudas sobre daño a la marca y a las ventas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="reason">
+          <div class="ic red">📱</div>
+          <div>
+            <h3>Debilidad del negocio móvil</h3>
+            <p>El móvil sigue siendo el <b>53% de los ingresos</b> y viene en caída (reservas netas de 739,5 M$ frente a 792,8 M$). Eso deja a la empresa dependiendo más que nunca de un solo lanzamiento.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="reason">
+          <div class="ic red">⚖️</div>
+          <div>
+            <h3>Riesgo «binario» y valoración exigente</h3>
+            <p>La volatilidad implícita ronda el <b>47%</b> (alta para una gran empresa) porque el resultado depende de un solo evento. Además, cotiza a múltiplos exigentes (≈53,5× EBITDA) y sin beneficios GAAP este año.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>En una frase:</b> la acción sube cuando algo <b>confirma que GTA 6 llegará a tiempo y generará dinero durante años</b>
+      (tráiler, notas alcistas, pistas de un nuevo título) y baja cuando algo <b>amenaza la fecha, las ventas o el margen</b>
+      (recortes de analistas, rumores de PC, filtraciones, caída del móvil).
+    </div>
+  </div>
+</section>
+
+<!-- ================= DATOS CLAVE ================= -->
+<section id="datos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Cifras</div>
+      <h2>Datos clave de Take-Two y GTA 6</h2>
+    </div>
+
+    <div class="grid g4" style="margin-bottom:24px">
+      <div class="card"><div class="big">$8.0–8.2 mil M</div><p style="margin-top:8px">Objetivo de reservas netas para el año fiscal 2027 (FY26 fue 6,72 mil M$).</p></div>
+      <div class="card"><div class="big">≈ 50 M</div><p style="margin-top:8px">Unidades de GTA 6 que asumen varios analistas para su escenario alcista.</p></div>
+      <div class="card"><div class="big">$260 M</div><p style="margin-top:8px">Preventas globales estimadas (Newzoo, ago). Newzoo proyecta hasta 4.500 M$ en ventas en la semana del lanzamiento.</p></div>
+      <div class="card"><div class="big">+49%</div><p style="margin-top:8px">Potencial de subida implícito en el precio objetivo medio del consenso (≈297 $).</p></div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Indicador</th><th>Valor</th><th>Detalle</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Precio (cierre 15 oct 2026)</td><td><b>$209.38</b></td><td>+4,05% ese día</td></tr>
+          <tr><td>Sesión en curso (16 oct)</td><td><b>≈ $204.12</b></td><td>−2,5% intradía</td></tr>
+          <tr><td>Cierre del 13 oct (caída)</td><td><b>$200.32</b></td><td>−4,07% (algunas fuentes −5%)</td></tr>
+          <tr><td>Rango 52 semanas</td><td><b>$187.63 – $265.94</b></td><td>Mín. 27 mar 2026 / máx. 7 jul 2026</td></tr>
+          <tr><td>Máximo histórico de cierre</td><td><b>$262.29</b></td><td>20 de octubre de 2025</td></tr>
+          <tr><td>Comportamiento del año</td><td><b>≈ −22%</b></td><td>Desde el cierre del 15 jul ($243.80): −17,8%</td></tr>
+          <tr><td>Capitalización bursátil</td><td><b>≈ $39.9 mil M</b></td><td>Múltiplo EBITDA ≈ 53,5×</td></tr>
+          <tr><td>Precio objetivo medio</td><td><b>≈ $297</b></td><td>Consenso «Strong Buy»; máx. BofA 368 $, mín. ~280 $</td></tr>
+          <tr><td>Próximo informe</td><td><b>9 nov 2026</b></td><td>Q2 FY27 tras el cierre; pérdida esperada ≈ $0,62/acción</td></tr>
+          <tr><td>Venta de insiders</td><td><b>$165,2 M</b></td><td>Últimos 12 meses, sin compras</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid g2" style="margin-top:24px">
+      <div class="card">
+        <span class="pill ok">Casos alcistas</span>
+        <h3>Rango de objetivos: 280 $ – 368 $</h3>
+        <p>BofA 368 $ · JPMorgan 310 $ · Wells Fargo / StoneX / Raymond James 300 $ · Oppenheimer 280 $. Se apoyan en el valor por jugador de GTA VI Online y en la venta de ~50 M de unidades.</p>
+      </div>
+      <div class="card">
+        <span class="pill bad">Casos bajistas</span>
+        <h3>Riesgos que citan los analistas</h3>
+        <p>Debilidad de NBA 2K y del móvil, guía del trimestre de diciembre por debajo del consenso, posible retraso o decepción, daño reputacional por filtraciones y dudas sobre cuánto durará el pico de ingresos tras el estreno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUENTES ================= -->
+<section id="fuentes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Referencias</div>
+      <h2>Fuentes consultadas</h2>
+      <p>Titulares y datos recopilados el 16 de octubre de 2026. Verifica siempre las cifras en los canales oficiales de Take-Two y Rockstar.</p>
+    </div>
+    <div class="src-grid">
+      <a class="src" href="https://www.gamesradar.com/games/grand-theft-auto/gta-6-launch-trailer/" target="_blank" rel="noopener"><b>GamesRadar+ — Tráiler de lanzamiento</b>15 oct 2026 · Jason y Lucía, música de Justice</a>
+      <a class="src" href="https://cdjuegos.com/noticias/2026/10/gta-6-trailer-de-lanzamiento-justice-flower-in-a-hurricane" target="_blank" rel="noopener"><b>CDJuegos — «Flower in a Hurricane»</b>15 oct 2026 · Grabado en PS5, 90 segundos</a>
+      <a class="src" href="https://www.polygon.com/gta-6-bloomberg-jason-rockstar-development/" target="_blank" rel="noopener"><b>Polygon / Bloomberg — Desarrollo</b>14 oct 2026 · «Project Americas» y retrasos</a>
+      <a class="src" href="https://gta6cheatsheet.com/es/noticias/gta-6-noticias-13-de-octubre-de-2026/" target="_blank" rel="noopener"><b>GTA6 Cheat Sheet — Noticias 13 oct</b>Informe del 9 nov y rumor del PC Q1 2027</a>
+      <a class="src" href="https://www.infobae.com/tecno/2026/10/14/filtran-nuevas-imagenes-de-gta-6-con-escenas-de-las-misiones-finales-y-deportes/" target="_blank" rel="noopener"><b>Infobae — Filtraciones de Cyberleek</b>14 oct 2026 · «The End of the Road»</a>
+      <a class="src" href="https://www.tipranks.com/news/take-two-stock-ttwo-dives-over-5-on-new-gta-vi-pc-port-release-window-rumor" target="_blank" rel="noopener"><b>TipRanks — Caída del 13 oct</b>Rumor de PC y presión en opciones</a>
+      <a class="src" href="https://247wallst.com/investing/2026/10/13/take-two-interactive-slides-5-as-wells-fargo-trims-estimates-behind-300-target-roblox-holds-flat-gamestop-barely-budges/" target="_blank" rel="noopener"><b>24/7 Wall St. — Wells Fargo recorta</b>13 oct 2026 · NBA 2K y móvil</a>
+      <a class="src" href="https://www.streetinsider.com/General+News/Slew+of+analyst+comments+sends+Take-Two+%28TTWO%29+up+4%25+ahead+of+November+earnings+and+GTV+6/27192367.html" target="_blank" rel="noopener"><b>StreetInsider — Repunte del 15 oct</b>BofA (368 $), StoneX y Raymond James</a>
+      <a class="src" href="https://www.investing.com/news/analyst-ratings/wells-fargo-reiterates-taketwo-stock-overweight-rating-at-300-target-93CH-4943909" target="_blank" rel="noopener"><b>Investing.com — Objetivos de analistas</b>Wells Fargo 300 $, resumen de casas de análisis</a>
+      <a class="src" href="https://www.cnbc.com/2026/08/28/gta-6-preview-netflix.html" target="_blank" rel="noopener"><b>CNBC — Demanda «blockbuster»</b>28 ago 2026 · Preventas de 260 M$ (Newzoo)</a>
+      <a class="src" href="https://chartexchange.com/symbol/nasdaq-ttwo/historical/" target="_blank" rel="noopener"><b>ChartExchange — Historial de precios TTWO</b>Cierres diarios de octubre de 2026</a>
+      <a class="src" href="http://www.take2games.com/ir/stock" target="_blank" rel="noopener"><b>Take-Two — Relaciones con inversores</b>Datos oficiales de la acción y resultados</a>
+    </div>
+
+    <div class="note">
+      <b>Aviso:</b> esta página resume información pública con fines informativos y de divulgación. No es una recomendación
+      de compra o venta de valores. Los precios intradía pueden variar; consulta fuentes oficiales antes de tomar decisiones.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Página informativa · GTA 6 × Take-Two Interactive (TTWO) · Datos al 16 de octubre de 2026</span>
+    <span>Hecha para seguimiento de noticias — no es asesoramiento financiero.</span>
+  </div>
+</footer>
+
+<script>
+/* ---------- Cuenta atrás ---------- */
+(function(){
+  var launch = new Date("2026-11-19T00:00:00");
+  function tick(){
+    var diff = launch - new Date();
+    if (diff < 0) diff = 0;
+    var s = Math.floor(diff/1000);
+    var d = Math.floor(s/86400); s -= d*86400;
+    var h = Math.floor(s/3600);  s -= h*3600;
+    var m = Math.floor(s/60);    s -= m*60;
+    document.getElementById("cd-d").textContent = d;
+    document.getElementById("cd-h").textContent = String(h).padStart(2,"0");
+    document.getElementById("cd-m").textContent = String(m).padStart(2,"0");
+    document.getElementById("cd-s").textContent = String(s).padStart(2,"0");
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+/* ---------- Datos de la acción ---------- */
+var series = [
+  {d:"1 oct",  c:203.62, note:""},
+  {d:"2 oct",  c:202.73, note:"Ficha PEGI 18 publicada y retirada"},
+  {d:"5 oct",  c:203.46, note:""},
+  {d:"6 oct",  c:202.53, note:"Reporte (falso) de exclusiva en la nube de Xbox"},
+  {d:"7 oct",  c:204.01, note:"Xbox desmiente la exclusiva en la nube"},
+  {d:"8 oct",  c:209.37, note:"Rockstar revela 6 emisoras de radio"},
+  {d:"9 oct",  c:213.44, note:""},
+  {d:"12 oct", c:208.82, note:"Wells Fargo reitera 300 $ pero recorta estimaciones"},
+  {d:"13 oct", c:200.32, note:"−4/5%: rumor port de PC Q1 2027 + filtraciones"},
+  {d:"14 oct", c:201.23, note:"Bloomberg: desarrollo de GTA 6 y coste ≤1.500 M$"},
+  {d:"15 oct", c:209.38, note:"+4%: tráiler de lanzamiento y notas de BofA/StoneX/Raymond James"},
+  {d:"16 oct", c:204.12, note:"Sesión en curso: −2,5% (toma de beneficios)", intraday:true}
+];
+
+/* ---------- Render del gráfico ---------- */
+(function(){
+  var W=980, H=340, PL=54, PR=18, PT=24, PB=42;
+  var iw = W-PL-PR, ih = H-PT-PB;
+  var vals = series.map(function(p){return p.c;});
+  var min = Math.min.apply(null, vals) - 5;
+  var max = Math.max.apply(null, vals) + 5;
+  var n = series.length;
+  var x = function(i){ return PL + (iw * i/(n-1)); };
+  var y = function(v){ return PT + ih * (1-(v-min)/(max-min)); };
+
+  var ns = "http://www.w3.org/2000/svg";
+  var svg = document.createElementNS(ns,"svg");
+  svg.setAttribute("viewBox","0 0 "+W+" "+H);
+  svg.setAttribute("role","img");
+  svg.setAttribute("aria-label","Gráfico del precio de cierre de TTWO del 1 al 16 de octubre de 2026");
+
+  function el(tag,attrs){ var e=document.createElementNS(ns,tag); for(var k in attrs) e.setAttribute(k,attrs[k]); return e; }
+
+  /* defs: gradiente del área */
+  var defs = el("defs",{});
+  var lg = el("linearGradient",{id:"areaGrad",x1:"0",y1:"0",x2:"0",y2:"1"});
+  lg.appendChild(el("stop",{offset:"0%","stop-color":"#ff2d92","stop-opacity":"0.35"}));
+  lg.appendChild(el("stop",{offset:"100%","stop-color":"#a259ff","stop-opacity":"0.02"}));
+  defs.appendChild(lg);
+  svg.appendChild(defs);
+
+  /* rejilla y eje Y */
+  var steps = 4;
+  for(var g=0; g<=steps; g++){
+    var v = min + (max-min)*g/steps;
+    var yy = y(v);
+    svg.appendChild(el("line",{x1:PL,y1:yy,x2:W-PR,y2:yy,stroke:"rgba(255,255,255,0.07)","stroke-width":1}));
+    var t = el("text",{x:PL-10,y:yy+4,fill:"#a89fc0","font-size":"11","text-anchor":"end"});
+    t.textContent = "$"+v.toFixed(0);
+    svg.appendChild(t);
+  }
+
+  /* área */
+  var areaD = "M"+x(0)+","+y(series[0].c);
+  for(var i2=1;i2<n;i2++) areaD += " L"+x(i2)+","+y(series[i2].c);
+  areaD += " L"+x(n-1)+","+(PT+ih)+" L"+x(0)+","+(PT+ih)+" Z";
+  svg.appendChild(el("path",{d:areaD,fill:"url(#areaGrad)"}));
+
+  /* línea */
+  var lineD = "M"+x(0)+","+y(series[0].c);
+  for(var i3=1;i3<n;i3++) lineD += " L"+x(i3)+","+y(series[i3].c);
+  svg.appendChild(el("path",{d:lineD,fill:"none",stroke:"#ff2d92","stroke-width":"2.5","stroke-linejoin":"round","stroke-linecap":"round"}));
+
+  /* ejes X (etiquetas) */
+  series.forEach(function(p,i){
+    if(i%2===0 || i===n-1){
+      var tx = el("text",{x:x(i),y:H-16,fill:"#a89fc0","font-size":"11","text-anchor":"middle"});
+      tx.textContent = p.d;
+      svg.appendChild(tx);
+    }
+  });
+
+  /* puntos + interacción */
+  var tip = document.getElementById("ctip");
+  series.forEach(function(p,i){
+    var prev = i>0 ? series[i-1].c : p.c;
+    var up = p.c >= prev;
+    var col = up ? "#38e07b" : "#ff5c6c";
+    var cx = x(i), cy = y(p.c);
+
+    /* halo para hit-area */
+    var hit = el("circle",{cx:cx,cy:cy,r:16,fill:"transparent",style:"cursor:pointer"});
+    var dot = el("circle",{cx:cx,cy:cy,r:i===n-1?6:4.5,fill:col,stroke:"#0b0712","stroke-width":2});
+    svg.appendChild(dot);
+    svg.appendChild(hit);
+
+    if(p.note){
+      svg.appendChild(el("circle",{cx:cx,cy:cy,r:9,fill:"none",stroke:"#22e0ff","stroke-width":1.5,opacity:"0.85"}));
+    }
+
+    function show(ev){
+      var chg = (i>0)? ((p.c-series[i-1].c)/series[i-1].c*100) : 0;
+      var sign = chg>=0?"+":"";
+      tip.innerHTML = "<b>"+p.d+"</b> · $" + p.c.toFixed(2) +
+        "<br><span class='"+(chg>=0?"up":"down")+"'>"+sign+chg.toFixed(2)+"%</span>" +
+        (p.intraday?" <span style='color:#a89fc0'>(intradía)</span>":"") +
+        (p.note?"<br><span style='color:#a89fc0'>"+p.note+"</span>":"");
+      tip.style.opacity = 1;
+      var wrap = document.getElementById("chartWrap");
+      var rect = svg.getBoundingClientRect();
+      var scale = rect.width / W;
+      tip.style.left = (cx*scale) + "px";
+      tip.style.top  = (cy*scale) + "px";
+    }
+    function hide(){ tip.style.opacity = 0; }
+    hit.addEventListener("mouseenter", show);
+    hit.addEventListener("mousemove", show);
+    hit.addEventListener("mouseleave", hide);
+    hit.addEventListener("touchstart", function(e){ show(e); }, {passive:true});
+  });
+
+  document.getElementById("chartWrap").appendChild(svg);
+})();
+
+/* ---------- Lista de eventos ---------- */
+(function(){
+  var ev = [
+    {d:"2 oct", type:"neu", t:"<strong>Ficha PEGI 18</strong> publicada y retirada: señal del tono adulto del juego."},
+    {d:"7 oct", type:"neu", t:"<strong>Xbox desmiente</strong> la exclusiva en la nube: GTA 6 sigue solo en consola."},
+    {d:"8 oct", type:"pos", t:"Rockstar revela <strong>seis emisoras de radio</strong>; la acción sube +2,6%."},
+    {d:"12 oct", type:"neg", t:"<strong>Wells Fargo</strong> mantiene «Overweight» y 300 $ pero recorta NBA 2K y móvil."},
+    {d:"13 oct", type:"neg", t:"<strong>−4/5%:</strong> rumor de port de PC Q1 2027, ansiedad por filtraciones y puts. Volumen de 5,2 M."},
+    {d:"14 oct", type:"neu", t:"<strong>Bloomberg</strong> publica el reportaje de desarrollo (Project Americas, coste ≤1.500 M$)."},
+    {d:"15 oct", type:"pos", t:"<strong>+4%:</strong> tráiler de lanzamiento + BofA (368 $), StoneX y Raymond James (300 $)."},
+    {d:"16 oct", type:"neg", t:"<strong>Sesión en curso −2,5%:</strong> toma de beneficios tras el rebote, en un mercado sin impulso."}
+  ];
+  var wrap = document.getElementById("events");
+  wrap.innerHTML = ev.map(function(e){
+    return '<div class="event"><div class="d">'+e.d+'</div><div class="t"><span class="tag '+e.type+'">'+
+      (e.type==="pos"?"Alcista":e.type==="neg"?"Bajista":"Neutral")+'</span>'+e.t+'</div></div>';
+  }).join("");
+})();
+</script>
+</body>
+</html>
